@@ -6,7 +6,7 @@ import subprocess
 ALLOWED_EXTENSIONS = {'pdf'}
 # 打印机名称
 PRINTER_NAME = Config.printer_name
-UPLOAD_FOLDER = 'uploads'
+UPLOAD_FOLDER = Config.printer_upload_folder
 
 
 class Printer:
