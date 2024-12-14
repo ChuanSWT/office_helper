@@ -1,14 +1,14 @@
 from config import Config
 import os
 from flask import Flask, request, render_template, flash
-from flask_socketio import SocketIO
+#from flask_socketio import SocketIO
 from werkzeug.utils import secure_filename
-from printer import Printer
-from videoDownload import VideoDownload
+from apps.printer import Printer
+from apps.videoDownload import VideoDownload
 
 
 app = Flask(__name__)
-socketio = SocketIO(app)
+#socketio = SocketIO(app)
 @app.route('/')
 def index():
     return render_template('welcome.html')
