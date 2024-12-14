@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频链接下载服务</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #e8f5e9; /* 淡绿色背景 */
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            border: 1px solid #388e3c;
+        }
+        h1 {
+            text-align: center;
+            color: #388e3c; /* 深绿色标题 */
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 1px solid #c8e6c9; /* 浅绿色边框 */
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #66bb6a; /* 浅绿色按钮 */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #81c784; /* 更浅的绿色悬浮 */
+        }
+        .message {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .progress-bar span {
+            display: block;
+            height: 24px;
+            background-color: #66bb6a; /* 浅绿色进度条 */
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>视频下载服务</h1>
+    <form action="/videoDownload/upload" method="post">
+        <label for="url">请输入视频地址:</label>
+        <input type="text" id="url" name="url" placeholder="例如： https://www.youtube.com/watch?v=_UD4zyHx0cw" required>
+        <input type="submit" value="开始下载">
+    </form>
+    <div class="message">
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Printer</title>
+    <style>
+        body {
+            background-color: #e0f7fa; /* 淡蓝色背景 */
+            color: #0277bd; /* 深蓝色文本 */
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            color: #0288d1; /* 稍深一点的蓝色 */
+        }
+        label {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        input[type="file"], select {
+            margin-top: 10px;
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #0288d1;
+        }
+        button {
+            background-color: #0288d1; /* 蓝色按钮 */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #01579b; /* 深蓝色按钮悬浮 */
+        }
+    </style>
+</head>
+<body>
+    <h1>PDF 文件打印</h1>
+
+    <!-- 上传表单 -->
+    <form action="/printer/upload" method="POST" enctype="multipart/form-data">
+        <label for="file">选择 PDF 文件:</label>
+        <input type="file" name="file" id="file" required><br><br>
+
+        <label for="print_mode">选择打印模式:</label>
+        <select name="print_mode" id="print_mode" required>
+            <option value="single">单面打印</option>
+            <option value="double">双面打印</option>
+        </select><br><br>
+
+        <button type="submit">上传并打印</button>
+    </form>
+</body>
+</html>

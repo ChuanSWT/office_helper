@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>功能选择</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5; /* 淡灰色背景 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333; /* 深灰色文本 */
+            position: relative; /* 确保制作人信息能够相对于页面定位 */
+        }
+        .container {
+            text-align: center;
+            padding: 30px;
+            background-color: #ffffff; /* 白色背景 */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        h1 {
+            margin-bottom: 30px;
+            color: #555; /* 灰色标题 */
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .button {
+            padding: 12px 24px;
+            background-color: #bdbdbd; /* 淡灰色按钮 */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none; /* 移除链接的默认样式 */
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #9e9e9e; /* 按钮悬浮时的颜色 */
+        }
+        /* 制作人信息样式 */
+        .creator-info {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            font-size: 12px;
+            color: #888;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>选择您要使用的功能</h1>
+    <div class="button-container">
+        <a href="{{ config['my_ip'] }}\printer" class="button">打印机</a>
+        <a href="{{ config['my_ip'] }}\videoDownload" class="button">视频下载</a>
+        <a href="{{ config['FEATURE_3_URL'] }}" class="button">功能 3</a>
+    </div>
+</div>
+
+<!-- 制作人信息 -->
+<div class="creator-info">
+    Powered by chatGPT&CW
+</div>
+
+</body>
+</html>
